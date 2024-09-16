@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking Platform</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: rgba(17, 17, 17, 0.95);
+      padding: 10px 0;
+      border-bottom: 2px solid #333;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9505;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      color: #ffffff;
+      padding: 5px 15px;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #ff9505;
+    }
+
+    .login-button {
+      border: 1px solid #fff;
+      padding: 5px 15px;
+      border-radius: 4px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .login-button:hover {
+      background-color: #e88905;
+    }
+
+    /* Two-Column Layout */
+    .container {
+      display: flex;
+      margin-top: 80px; /* Offset for fixed header */
+      padding: 20px;
+      max-width: 1200px;
+      margin: 80px auto;
+    }
+
+    .left-section {
+      flex: 1.5;
+      padding: 20px;
+      background-color: #1a1a1a;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+
+    .left-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .right-section {
+      flex: 2;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    .main-content {
+      text-align: left;
+    }
+
+    .main-content h1 {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #ff9505;
+    }
+
+    .main-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: flex-start;
+      margin: 20px 0;
+      gap: 10px;
+    }
+
+    .search-field {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .search-button {
+      padding: 10px 20px;
+      background-color: #ff9505;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .search-button:hover {
+      background-color: #e88905;
+    }
+
+    /* Cards for Offers */
+    .offers {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: #222;
+      border: 1px solid #333;
+      padding: 20px;
+      margin: 10px;
+      width: 30%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #ff9505;
+    }
+
+    .card p {
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #181818;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-section, .right-section {
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+
+      .search-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .offers {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="header-content">
+        <a href="#" class="logo">Tewes<span>go</span></a>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">About Us</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link login-button">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Left Section with Large Image -->
+    <div class="left-section">
+      <img src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/BS%20VI%20Bus%20Single%20Axcel_Single%20Bus?wid=1024" alt="Bus Travel Image">
+    </div>
+
+    <!-- Right Section with Main Content and Offers -->
+    <div class="right-section">
+      <div class="main-content">
+        <h1>Bring your loved ones closer to your dreams</h1>
+        <p>Save up to 40% on your first time travel</p>
+        <div class="search-container">
+          <input type="text" class="search-field" placeholder="Select Source">
+          <input type="text" class="search-field" placeholder="Select Destination">
+          <input type="date" class="search-field">
+          <button class="search-button">Search Buses</button>
+        </div>
+      </div>
+
+      <!-- Offers Section -->
+      <div class="offers">
+        <div class="card">
+          <h3>Save Rs 500/-</h3>
+          <p>on bus tickets Limited period offer</p>
+        </div>
+        <div class="card">
+          <h3>Save 20% on Delhi routes</h3>
+          <p>on referrals</p>
+        </div>
+        <div class="card">
+          <h3>Win exciting prices on referrals</h3>
+          <p>Referral Code REDREFER</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Bus Booking. All rights reserved.</p>
+  </footer>
+</body>
+</html>

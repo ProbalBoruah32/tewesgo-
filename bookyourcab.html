@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cab Booking Service</title>
+  <style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Arial', sans-serif;
+        color: #ffffff;
+        background-color: #000000;
+        overflow-x: hidden;
+    }
+    
+    .background-container {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: -1; /* Send iframe behind other content */
+    }
+
+    .header {
+        background-color: rgba(17, 17, 17, 0.8);
+        padding: 20px 0;
+        border-bottom: 2px solid #333333;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff9505;
+        transition: color 0.3s ease;
+    }
+    
+    .logo span {
+        color: #ffffff;
+    }
+    
+    .nav-menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        color: #ffffff;
+        padding: 5px 10px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .nav-link:hover {
+        color: #ff9505;
+        transform: scale(1.1);
+    }
+    
+    .login-button {
+        border: 1px solid #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .login-button:hover {
+        background-color: #e88905;
+        color: #fff;
+        transform: scale(1.05);
+    }
+    
+    .blocks-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px; /* To avoid content being hidden under fixed header */
+        overflow-y: auto;
+        max-height: calc(100vh - 100px);
+    }
+    
+    .block {
+        background-color: #333;
+        color: #fff;
+        margin: 20px 0;
+        padding: 20px;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .block:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .block img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .block-content {
+        padding: 10px;
+    }
+    
+    .block-content h3 {
+        margin-top: 0;
+    }
+    
+    .block-link {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #444;
+        padding: 3px 12px;
+        border-radius: 10px;
+        transition: background-color 0.2s ease-in-out;
+    }
+    
+    .block-link:hover {
+        background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-container">
+    <iframe src="https://my.spline.design/pushittothelimit-a2fdf1ab6aca5203e51e0c0b14549a42/" frameborder="0" allowfullscreen></iframe>
+    <header class="header">
+      <nav class="navbar">
+        <div class="header-content">
+          <a href="#" class="logo">Tewes<span>go</span></a>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#" class="nav-link">Our Products</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link login-button">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Scrollable blocks -->
+    <div class="blocks-container">
+      <div class="block">
+        <img src="https://tampataxi.cab/wp-content/uploads/elementor/thumbs/bg_hero_curve-pb1wrbrzwcwl0yjwv7izdg5twtozy27pwyaqp0ia0w.jpg" alt="Image 1">
+        <div class="block-content">
+          <h3>simple cab for 1 person</h3>
+          <p>Rating: 4.5/5</p>
+          <p>Price: per 1km 8.0/-Rs </p>
+          <a href="contact.html" class="block-link">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Additional Blocks -->
+      <div class="block">
+        <img src="https://media.istockphoto.com/id/619068028/photo/two-women-standing-in-the-back-of-open-car-turning.jpg?s=612x612&w=0&k=20&c=Ib0Qb1WZnFvdNKrqizarh98C4OtJIjpRhMSUmrp7LWs=" alt="Image 2">
+        <div class="block-content">
+          <h3>simple cab for 2 person</h3>
+          <p>Rating: 4.2/5</p>
+          <p>Price:per 1km 6.0/- rs per person </p>
+          <a href="contact.html" class="block-link">Learn More</a>
+        </div>
+      </div>
+      <div class="block">
+        <img src="https://media.istockphoto.com/id/932750734/photo/three-male-friends-on-a-road-trip-using-a-tablet-computer.jpg?s=612x612&w=0&k=20&c=ksFdUrJ62yf5wipekSX7BqathgUQi6zwYOzvmqO7EW0=" alt="Image 2">
+        <div class="block-content">
+          <h3>3 or 4 person cab</h3>
+          <p>Rating: 4.2/5</p>
+          <p>Price: per 1 km 5.0/-rs per person</p>
+          <a href="contact.html" class="block-link">Learn More</a>
+        </div>
+      </div>
+      <div class="block">
+        <img src="https://www.justahotels.com/wp-content/uploads/2023/10/Family-Holiday-Destinations-in-India.jpg" alt="Image 2">
+        <div class="block-content">
+          <h3>friends and family trip</h3>
+          <p>Rating: 4.8/5</p>
+          <p>Price: the price will decide by the driver</p>
+          <a href="familypack.html" class="block-link">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Continue adding more blocks as needed -->
+    </div>
+  </div>
+</body>
+
+</html>

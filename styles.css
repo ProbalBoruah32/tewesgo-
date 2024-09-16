@@ -1,0 +1,179 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff; /* White text color */
+  background-color: #000000; /* Black background color */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #111111; /* Darker background for header */
+  padding: 20px 0;
+  border-bottom: 2px solid #333333; /* Subtle border for header */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff9505; /* Logo color */
+}
+
+.logo span {
+  color: #ffffff; /* White text color */
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff9505; /* Orange color on hover */
+}
+
+/* Hero Section */
+.hero {
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  color: #ffffff; /* White text color for hero section */
+  padding: 100px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #ff9505;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e88905;
+}
+
+.hero-animation {
+  width: 600px; /* Increased width for larger animation visibility */
+  height: 400px; /* Increased height for larger animation visibility */
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Prevents overflow of content */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+
+/* Service Section */
+.service-section {
+  background-color: #111111; /* Darker background for service section */
+  padding: 60px 0;
+  text-align: center;
+}
+
+.service-blocks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.service-block {
+  background: #222222; /* Dark background for service blocks */
+  border: 1px solid #333333; /* Subtle border for service blocks */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  color: #ffffff; /* White text color for service blocks */
+}
+
+.service-block img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.btn-secondary {
+  background-color: #ffffff; /* White button */
+  color: #000000; /* Black text */
+}
+
+.btn-secondary:hover {
+  background-color: #e88905; /* Orange color on hover */
+  color: #ffffff; /* White text color */
+}
+
+/* Footer */
+.footer {
+  background-color: #a16a6a5c; /* Dark background for footer */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: #ffffff; /* White text color */
+}
+
+.footer-link:hover {
+  color: #ff9505; /* Orange color on hover */
+}

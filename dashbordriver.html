@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Expense Tracker & Doughnut Chart</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: white;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            background-color: #202020;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h2 {
+            color: #ffcc00;
+        }
+
+        .sidebar nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 20px 0;
+            display: block;
+            font-size: 18px;
+        }
+
+        .sidebar nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main dashboard */
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        /* Top Section */
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .account-info {
+            width: 30%;
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .account-info h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .account-info p {
+            font-size: 14px;
+        }
+
+        .account-info .balance {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .chart-container {
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chart-card {
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            width: 48%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Middle section */
+        .middle-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .expense-card,
+        .analytics-card {
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            width: 48%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .expense-card h3,
+        .analytics-card h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        /* Compact Expense Tracker Styling */
+        .expense-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .expense-summary div {
+            text-align: center;
+        }
+
+        .expense-table-container {
+            height: 180px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        #expense-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background-color: #333;
+        }
+
+        #expense-table th, #expense-table td {
+            padding: 8px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        #expense-table th {
+            background-color: #555;
+        }
+
+        .add-expense-form {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .add-expense-form input, .add-expense-form select {
+            width: 30%;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .add-expense-form button {
+            padding: 5px 10px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-expense-form button:hover {
+            background-color: #ffdd33;
+        }
+
+        /* Doughnut Chart Styling */
+        .doughnut-chart {
+            width: 300px;
+            margin-right: 20px;
+        }
+
+        .expense-and-chart-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <h2>Dashboard</h2>
+                <nav>
+                    <a href="#">Overview</a>
+                    <a href="#">Account</a>
+                    <a href="#">Services</a>
+                    <a href="#">Payments</a>
+                </nav>
+            </div>
+            <p>Settings | Help</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Section -->
+            <div class="top-section">
+                <div class="account-info">
+                    <h3>James Martinia Junior</h3>
+                    <p>Verified Account</p>
+                    <p>Income: $9k | Expenses: $4k | Points: 98</p>
+                    <p class="balance">$6421.50</p>
+                    <p>MasterCard: **** **** **** 3667</p>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Expenses</h3>
+                        <p>$1872.75 Outgoing</p>
+                        <p>$890.50 Incoming</p>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Earnings</h3>
+                        <p>$894.39</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section: Expenses and Doughnut Chart -->
+            <div class="middle-section">
+                <div class="expense-and-chart-container">
+                    <!-- Doughnut Chart -->
+                    <div class="doughnut-chart">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+
+                    <!-- Compact Expense Tracker -->
+                    <div class="expense-card">
+                        <h3>My Expenses</h3>
+
+                        <div class="expense-summary">
+                            <div>
+                                <p>Total Income</p>
+                                <p style="color: green;" id="updatedInc">25000</p>
+                            </div>
+                            <div>
+                                <p>Total Expenses</p>
+                                <p style="color: red;" id="updatedExp">18000</p>
+                            </div>
+                            <div>
+                                <p>Balance</p>
+                                <p id="updatedBal">7000</p>
+                            </div>
+                        </div>
+
+                        <div class="expense-table-container">
+                            <table id="expense-table">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th>Type</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="add-expense-form">
+                            <select id='itemType'>
+                                <option value="0">Expense</option>
+                                <option value="1">Income</option>
+                            </select>
+                            <input id="name" type="text" placeholder="Name" />
+                            <input id="amount" type="number" placeholder="Amount" />
+                            <button onclick="addItem()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Initial Data
+        let tableEntries = [
+            { type: 1, name: "income", amount: 25000 },
+            { type: 0, name: "rent", amount: 18000 },
+            { type: 0, name: "food", amount: 5000 },
+        ];
+
+        // Function to update summary
+        function updateSummary() {
+            let totalIncome = tableEntries.reduce((t, e) => e.type === 1 ? t + e.amount : t, 0);
+            let totalExpense = tableEntries.reduce((t, e) => e.type === 0 ? t + e.amount : t, 0);
+            document.getElementById("updatedInc").innerText = totalIncome;
+            document.getElementById("updatedExp").innerText = totalExpense;
+            document.getElementById("updatedBal").innerText = totalIncome - totalExpense;
+
+            // Update doughnut chart data
+            updateChart(totalIncome, totalExpense);
+        }
+
+        // Function to add an entry
+        function addItem() {
+            let type = document.getElementById('itemType').value;
+            let name = document.getElementById('name').value;
+            let amount = Number(document.getElementById('amount').value);
+
+            if (name === "" || amount <= 0) {
+                return alert("Invalid input");
+            }
+
+            tableEntries.push({ type: Number(type), name, amount });
+            updateTable();
+        }
+
+        // Function to render table row
+        function renderTableRow(entry, index) {
+            let table = document.getElementById("expense-table");
+            let row = table.insertRow();
+            row.insertCell(0).innerText = index + 1;
+            row.insertCell(1).innerText = entry.name;
+            row.insertCell(2).innerText = entry.amount;
+            row.insertCell(3).innerText = entry.type === 0 ? "Expense" : "Income";
+            let deleteCell = row.insertCell(4);
+            deleteCell.innerHTML = "&#9746;";
+            deleteCell.style.cursor = "pointer";
+            deleteCell.addEventListener("click", () => deleteItem(entry));
+        }
+
+        // Function to delete an entry
+        function deleteItem(entry) {
+            tableEntries = tableEntries.filter(e => e !== entry);
+            updateTable();
+        }
+
+        // Function to refresh the table
+        function updateTable() {
+            let table = document.getElementById("expense-table");
+            table.innerHTML = `<tr><th>#</th><th>Name</th><th>Amount</th><th>Type</th><th>Delete</th></tr>`;
+            tableEntries.forEach(renderTableRow);
+            updateSummary();
+        }
+
+        // Initialize Chart.js doughnut chart
+        const ctx = document.getElementById('expenseChart').getContext('2d');
+        const expenseChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Income', 'Expenses'],
+                datasets: [{
+                    label: 'Income vs Expenses',
+                    data: [25000, 18000],
+                    backgroundColor: ['green', 'red'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Function to update the doughnut chart
+        function updateChart(income, expense) {
+            expenseChart.data.datasets[0].data = [income, expense];
+            expenseChart.update();
+        }
+
+        // Initialize the table and chart
+        updateTable();
+    </script>
+</body>
+
+</html>

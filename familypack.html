@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyPlane - Best Trip</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .background-container {
+      position: relative;
+      min-height: 100vh;
+      background-image: url('https://assets.babycenter.com/ims/2024/04/iStock-1448344048_4x3.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Header Styles (Copied from your code) */
+    .header {
+      background-color: rgba(17, 17, 17, 0.8);
+      padding: 20px 0;
+      border-bottom: 2px solid #333333;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9505;
+      transition: color 0.3s ease;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      color: #ffffff;
+      padding: 5px 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #ff9505;
+      transform: scale(1.1);
+    }
+
+    .login-button {
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e88905;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Main content area */
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding-top: 150px; /* Offset for the fixed header */
+      height: 80vh;
+    }
+
+    .main-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input, .search-bar select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Special Offers Section */
+    .offers-section {
+      padding: 50px;
+      background-color: #fff;
+    }
+
+    .offers-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .offer {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 10px;
+      width: 30%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .offer img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .offer h3 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+
+    .offer p {
+      margin: 10px 0;
+    }
+
+    .offer:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-container">
+    <header class="header">
+      <nav class="navbar">
+        <div class="header-content">
+          <a href="#" class="logo">Tewes<span>go</span></a>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#" class="nav-link">About Us</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link login-button">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <h1>Let's Make Your Best Trip Ever</h1>
+      <p>Plan and book your perfect trip with expert advice, travel tips, destination information, and inspiration from us.</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Where" />
+        <input type="date" />
+        <select>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+        </select>
+        <button>Search Plane</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Special Offers Section -->
+  <section class="offers-section">
+    <h2>Special Offers</h2>
+    <div class="offers-container">
+      <div class="offer">
+        <img src="https://cdn.carmel-apartments.com/system/uploads/fae/image/asset/9836/1200x630-discover-rocky-mountain-national-park-from-denver.jpg" alt="visit">
+        <h3>Discover the Mountains</h3>
+        <p>Starting from $499</p>
+      </div>
+      <div class="offer">
+        <img src="https://www.hiltongrandvacations.com/-/media/images/main/blogs/2023/06/7-beach-destinations-to-explore-with-hgv_jun9_header-1-resize/image.jpg" alt="Offer 2">
+        <h3>Explore the Beaches</h3>
+        <p>Starting from $399</p>
+      </div>
+      <div class="offer">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCE7aPQgqEjJM4p0bVxf0R8B-QKa3N9mBvA&s" alt="Offer 3">
+        <h3>Adventure in the Desert</h3>
+        <p>Starting from $599</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FlyPlane. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

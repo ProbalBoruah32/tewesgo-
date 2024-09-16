@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Booking Service</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .service-section {
+      background-color: #111111; /* Darker background for service section */
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .service-blocks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for the square grid */
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+      max-width: 800px;
+      margin: 0 auto; /* Centering the grid */
+    }
+
+    .service-block {
+      background: #222222; /* Dark background for service blocks */
+      border: 1px solid #333333; /* Subtle border for service blocks */
+      padding: 20px;
+      border-radius: 8px;
+      color: #ffffff; /* White text color for service blocks */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .service-block img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff; /* White button */
+      color: #000000; /* Black text */
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e88905; /* Orange color on hover */
+      color: #ffffff; /* White text color */
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #a16a6a5c; /* Dark background for footer */
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .footer-link {
+      font-size: 0.875rem;
+      color: #ffffff; /* White text color */
+    }
+
+    .footer-link:hover {
+      color: #ff9505; /* Orange color on hover */
+    }
+
+    /* Navigation Bar */
+    .header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(10, 10, 10, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9505;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #e88905;
+      transform: scale(1.1);
+    }
+
+    .login-button {
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e88905;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="header-content">
+        <a href="bot.html" class="logo">Tewes<span>go</span></a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Our Services</a></li>
+          <li><a href="#" class="nav-link">About Us</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link login-button">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Section -->
+  <section class="service-section">
+    <div class="container">
+      <h2>Experience the Memorable Ride</h2>
+      <div class="service-blocks">
+        <div class="service-block">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTmG6zkoSkyC5iCWDEBI1SOr-Gw1W2kQyg2g&s" alt="Service">
+          <h3>Book Your Cab</h3>
+          <p>Book your cab instantly by clicking on the map.</p>
+          <a href="cabbook.html" class="btn btn-secondary">book now</a>
+        </div>
+
+        <div class="service-block">
+          <img src="https://www.limocabservice.com/wp-content/uploads/2019/11/WhatsApp-Image-2019-11-11-at-10.07.34-PM.jpeg" alt="Service">
+          <h3>Monthly Cab Booking</h3>
+          <p>Take your daily cab with extra security.</p>
+          <a href="officescollcab.html" class="btn btn-secondary">book now</a>
+        </div>
+
+        <div class="service-block">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTol3uoSX6U1XMCpiZQaUNpI-hFscOqj1lyaYxc1-yhLia1HOcn4X8lykRALkcVGUUC_X0&usqp=CAU" alt="Service">
+          <h3>Cycle Booking</h3>
+          <p>We provide indigenous cycle rides in your area.</p>
+          <a href="cycle.html" class="btn btn-secondary">book now</a>
+        </div>
+
+        <div class="service-block">
+          <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=http://img.haymarketsac.in/autocarpro/4ceed3a4-eadb-4e28-9ebe-549db4037578_Volvo-Buses.jpg&w=750&h=490&q=75&c=1" alt="Service">
+          <h3>Bus Booking</h3>
+          <p>Book your bus anywhere on the road.</p>
+          <a href="busbook.html" class="btn btn-secondary">book now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2023 RideOn Taxi. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Make navigation link active on click
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function () {
+          document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

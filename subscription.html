@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Plans</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1b1b1b;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pricing-container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .pricing-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .pricing-header p {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .toggle-container {
+      margin-bottom: 20px;
+    }
+
+    .pricing-toggle {
+      background-color: #333;
+      border-radius: 30px;
+      padding: 5px;
+      display: inline-flex;
+      justify-content: space-between;
+      width: 200px;
+    }
+
+    .toggle-button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #000;
+      transition: background-color 0.3s;
+    }
+
+    .slider-container {
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .slider {
+      width: 50%;
+    }
+
+    .blue-line {
+      height: 5px;
+      background-color: blue;
+      width: 50%;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .plans-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .plan {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: left;
+      position: relative;
+    }
+
+    .plan h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .plan-price {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .plan-details {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .plan-details li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .plan-details li span {
+      margin-left: 10px;
+    }
+
+    .book-now {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .book-now:hover {
+      background-color: #ff9900;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-container">
+    <div class="pricing-header">
+      <h1>Pricing Plans For Everyone</h1>
+      <p>Lorem Ipsum is simply dummy text</p>
+    </div>
+
+    <div class="toggle-container">
+      <div class="pricing-toggle">
+        <button id="monthly-button" class="toggle-button" onclick="setPricing('monthly')">Monthly</button>
+        <button id="annually-button" class="toggle-button" onclick="setPricing('annually')">Annually</button>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <label for="user-slider"><span id="user-count">100</span> Users</label>
+      <input type="range" id="user-slider" min="1" max="100" value="100" class="slider" oninput="updatePricing()">
+    </div>
+    <div class="blue-line" id="blue-line"></div>
+
+    <div class="plans-container">
+      <div class="plan">
+        <h3>Starter <span style="font-size: 12px; color: gray;">Individual</span></h3>
+        <p class="plan-price">$<span id="starter-price">65</span> <span style="font-size: 14px;">/ Month</span></p>
+        <ul class="plan-details">
+          <li><span>Premium Phone Support</span></li>
+          <li><span>Unlimited Bandwidth</span></li>
+          <li><span>Custom Domain</span></li>
+        </ul>
+        <button class="book-now">Book Now</button>
+      </div>
+
+      <div class="plan">
+        <h3>Premium <span style="font-size: 12px; color: gray;">Business</span></h3>
+        <p class="plan-price">$<span id="premium-price">85</span> <span style="font-size: 14px;">/ Month</span></p>
+        <ul class="plan-details">
+          <li><span>Premium Phone Support</span></li>
+          <li><span>Unlimited Bandwidth</span></li>
+          <li><span>lagauge responsibilty</span></li>
+          <li><span>Custom Domain</span></li>
+          <li><span>ai asistance24/7</span></li>
+          
+        </ul>
+        <button class="book-now">Book Now</button>
+      </div>
+
+      <div class="plan">
+        <h3>Ultimate <span style="font-size: 12px; color: gray;">Enterprise</span></h3>
+        <p class="plan-price">$<span id="ultimate-price">96</span> <span style="font-size: 14px;">/ Month</span></p>
+        <ul class="plan-details">
+            <li><span>Premium Phone Support with extra service asistance</span></li>
+            <li><span>Unlimited Bandwidth</span></li>
+            <li><span>lagauge responsibilty</span></li>
+            <li><span>Custom Domain</span></li>
+            <li><span>ai asistance 24/7</span></li>
+            <li><span>map can be customize by you </span></li>
+        </ul>
+        <button class="book-now">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let pricingMode = 'monthly';
+
+    const pricingData = {
+      monthly: {
+        starter: 65,
+        premium: 85,
+        ultimate: 96
+      },
+      annually: {
+        starter: 55,
+        premium: 75,
+        ultimate: 86
+      }
+    };
+
+    function setPricing(mode) {
+      pricingMode = mode;
+      updatePricing();
+    }
+
+    function updatePricing() {
+      const userCount = document.getElementById('user-slider').value;
+      const starterPrice = pricingData[pricingMode].starter;
+      const premiumPrice = pricingData[pricingMode].premium;
+      const ultimatePrice = pricingData[pricingMode].ultimate;
+
+      // Update prices dynamically
+      document.getElementById('starter-price').textContent = Math.round(starterPrice * userCount / 100);
+      document.getElementById('premium-price').textContent = Math.round(premiumPrice * userCount / 100);
+      document.getElementById('ultimate-price').textContent = Math.round(ultimatePrice * userCount / 100);
+      document.getElementById('user-count').textContent = userCount;
+
+      // Update the blue line width
+      const blueLine = document.getElementById('blue-line');
+      blueLine.style.width = userCount + '%';
+    }
+
+    // Initial setup
+    updatePricing();
+  </script>
+
+</body>
+</html>

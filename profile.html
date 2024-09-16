@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .profile-container {
+      width: 350px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .profile-header img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .profile-header h2 {
+      margin: 10px 0 5px;
+    }
+
+    .edit-section {
+      margin-top: 20px;
+    }
+
+    .edit-section label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .edit-section input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .edit-section input[type="password"] {
+      letter-spacing: 3px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .actions button {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 48%;
+    }
+
+    .actions button:hover {
+      background-color: #e6b800;
+    }
+
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #1e1e1e;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #333;
+    }
+
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-bar a img {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/030/798/360/small_2x/beautiful-asian-girl-wearing-over-size-hoodie-in-casual-style-ai-generative-photo.jpg" alt="Profile Picture">
+      <h2>Allisa Perry</h2>
+    </div>
+
+    <div class="edit-section">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" value="96034 56878">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" value="test@abs.com">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" value="******">
+    </div>
+
+    <div class="actions">
+      <button>Logout</button>
+      <button>Settings</button>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="index.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home"><span>Home</span></a>
+    <a href="contactus.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/filled-chat.png" alt="Messages"><span>Messages</span></a>
+    <a href="mipmap.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/map-pin.png" alt="Arriving"><span>Arriving</span></a>
+    <a href="bot.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/more.png" alt="More"><span>More</span></a>
+  </div>
+
+</body>
+</html>

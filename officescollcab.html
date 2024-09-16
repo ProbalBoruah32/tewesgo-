@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Cab Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2d2f36;
+            color: white;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .left-panel, .right-panel {
+            padding: 20px;
+        }
+        
+        .left-panel {
+            flex: 1;
+            background-color: #353740;
+        }
+        
+        .right-panel {
+            flex: 1;
+            background-color: #2b2c31;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .cab-list {
+            margin-top: 20px;
+        }
+        
+        .cab-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #40434b;
+            border-radius: 10px;
+        }
+        
+        .cab-logo {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+        
+        .cab-details h3 {
+            font-size: 18px;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        
+        .cab-image img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .cab-booking-info {
+            margin-bottom: 30px;
+        }
+        
+        .book-now, .subscribe-btn {
+            background-color: #5cb85c;
+            color: white;
+            padding: 5px 9px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .book-now:hover, .subscribe-btn:hover {
+            background-color: #4cae4c;
+        }
+        
+        .subscription-section {
+            background-color: #40434b;
+            padding: 5px;
+            border-radius: 9px;
+        }
+
+        /* Round Shape Animation */
+        .round-shape {
+            margin: 20px 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid #e88905;
+            position: relative;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .round-shape-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        /* Navbar Styles */
+        .header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 10, 10, 0.7);
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff9505;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #e88905;
+            transform: scale(1.1);
+        }
+
+        .login-button {
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #e88905;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="header-content">
+                <a href="#" class="logo">Tewes<span>go</span></a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Our Services</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link login-button">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-panel">
+            <h2>Welcome to Office Cab Booking</h2>
+            <div class="cab-list">
+                <div class="cab-item">
+                    <div class="cab-logo">🚕</div>
+                    <div class="cab-details">
+                        <h3>Yellow Cab Services</h3>
+                        <p>Special discounts for office rides</p>
+                    </div>
+                </div>
+                <div class="cab-item">
+                    <div class="cab-logo">🚖</div>
+                    <div class="cab-details">
+                        <h3>City Cab Limited</h3>
+                        <p>24/7 service in all major cities</p>
+                    
+            </div>
+        </div>
+        <!-- Profile Picture -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBlPlpTtK_z4wQ4W74DmV5pxpZYatxBAmzrg&s" alt="Profile Picture" class="profile-pic">
+        </div>
+
+            <!-- Round Shape Animation -->
+            <div class="round-shape">
+                <div class="round-shape-text">Sept</div>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-panel">
+            <div class="cab-image">
+                <img src="https://gomotors.net/blog/wp-content/uploads/2019/04/5e178db8b626b347494d25ec868aa0e7.jpeg" alt="Cab Image">
+            </div>
+            <div class="cab-booking-info">
+                <h3>Cab Booking Details</h3>
+                <p>Available Seats: 3</p>
+                <p>Price: ₹200 per seat</p>
+                <p><strong>Pickup Time:</strong> 8:00 AM</p>
+                <a href="bookyourcab.html" class="book-now">Book Now</a>
+            </div>
+
+            <!-- Subscription Section -->
+            <div class="subscription-section">
+                <h3>Subscribe for Offers</h3>
+                <p>Get regular updates and offers by subscribing to our newsletter.</p>
+                <a href="subscription.html" class="subscribe-btn">Subscribe Now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

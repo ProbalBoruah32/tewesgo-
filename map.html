@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map with Car Markers and Location</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    
+    .leaflet-popup-content-wrapper {
+      font-family: Arial, sans-serif;
+    }
+
+    .leaflet-popup-content-wrapper a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .leaflet-popup-content-wrapper a:hover {
+      text-decoration: underline;
+    }
+
+    .leaflet-marker-icon {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize the map
+      const map = L.map('map').setView([26.7575, 94.2037], 10); // Center on Jorhat, Assam
+
+      // Set up the OpenStreetMap layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Your current location (Jorhat, Assam)
+      const myLocation = { lat: 26.7575, lng: 94.2037 };
+
+      // Add marker for your location
+      L.marker(myLocation, { icon: L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/512/25/25231.png', iconSize: [32, 32] }) })
+        .addTo(map)
+        .bindPopup(`<div><strong>Your Location</strong></div>`);
+
+      // Car marker data with distinct locations around Jorhat
+      const cars = [
+        { lat: 26.7575, lng: 94.2037, name: "Car 1", url: "car1.html" },
+        { lat: 26.7654, lng: 94.2201, name: "Car 2", url: "car2.html" },
+        { lat: 26.7450, lng: 94.1956, name: "Car 3", url: "car3.html" },
+        { lat: 26.7738, lng: 94.2143, name: "Car 4", url: "car4.html" },
+        { lat: 26.7688, lng: 94.2277, name: "Car 5", url: "car5.html" },
+        { lat: 26.7613, lng: 94.1920, name: "Car 6", url: "car6.html" },
+        { lat: 26.7559, lng: 94.2083, name: "Car 7", url: "car7.html" },
+        { lat: 26.7700, lng: 94.2017, name: "Car 8", url: "car8.html" },
+        { lat: 26.7599, lng: 94.2156, name: "Car 9", url: "car9.html" },
+        { lat: 26.7665, lng: 94.2242, name: "Car 10", url: "car10.html" }
+      ];
+
+      // Add car markers to the map
+      cars.forEach(car => {
+        const marker = L.marker([car.lat, car.lng]).addTo(map);
+        
+        // Add a popup to the marker
+        marker.bindPopup(`
+          <div>
+            <strong>${car.name}</strong><br>
+            <a href="${car.url}" target="_blank">View Details</a>
+          </div>
+        `);
+      });
+    });
+  </script>
+</body>
+
+</html>

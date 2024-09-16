@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      background-color: #000000;
+      overflow-x: hidden;
+    }
+
+    .background-image {
+      background-image: url('your-bike-image.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: rgba(17, 17, 17, 0.8);
+      padding: 20px 0;
+      border-bottom: 2px solid #333333;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9505;
+      transition: color 0.3s ease;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      color: #ffffff;
+      padding: 5px 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #ff9505;
+      transform: scale(1.1);
+    }
+
+    .login-button {
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e88905;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Contact List Container */
+    .contact-list {
+      padding-top: 100px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact {
+      background-color: #333;
+      color: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .contact:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .contact-info {
+      flex-grow: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-info p {
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .contact-actions button {
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-actions button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-image">
+    <header class="header">
+      <div class="header-content">
+        <a href="#" class="logo">Tewes<span>go</span></a>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Our Products</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link login-button">Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Contact List -->
+    <div class="contact-list">
+      <div class="contact">
+        <img src="https://picsum.photos/50/50" alt="Contact 1">
+        <div class="contact-info">
+          <h3>John Doe</h3>
+          <p>+1 123 456 7890</p>
+        </div>
+        <div class="contact-actions">
+          <button onclick="callContact('John Doe')">Call</button>
+          <button onclick="messageContact('John Doe')">Message</button>
+        </div>
+      </div>
+
+      <div class="contact">
+        <img src="https://picsum.photos/50/50" alt="Contact 2">
+        <div class="contact-info">
+          <h3>Jane Smith</h3>
+          <p>+1 987 654 3210</p>
+        </div>
+        <div class="contact-actions">
+          <button onclick="callContact('Jane Smith')">Call</button>
+          <button onclick="messageContact('Jane Smith')">Message</button>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="https://picsum.photos/50/50" alt="Contact 2">
+        <div class="contact-info">
+          <h3>Jane Smith</h3>
+          <p>+1 987 654 3210</p>
+        </div>
+        <div class="contact-actions">
+          <button onclick="callContact('Jane Smith')">Call</button>
+          <button onclick="messageContact('Jane Smith')">Message</button>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="https://picsum.photos/50/50" alt="Contact 2">
+        <div class="contact-info">
+          <h3>Jane Smith</h3>
+          <p>+1 987 654 3210</p>
+        </div>
+        <div class="contact-actions">
+          <button onclick="callContact('Jane Smith')">Call</button>
+          <button onclick="messageContact('Jane Smith')">Message</button>
+        </div>
+      </div>
+
+      <div class="contact">
+        <img src="https://picsum.photos/50/50" alt="Contact 3">
+        <div class="contact-info">
+          <h3>Michael Johnson</h3>
+          <p>+1 555 123 4567</p>
+        </div>
+        <div class="contact-actions">
+          <button onclick="callContact('Michael Johnson')">Call</button>
+          <button onclick="messageContact('Michael Johnson')">Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add JS for buttons functionality -->
+  <script>
+    function callContact(name) {
+      alert('Calling ' + name);
+    }
+
+    function messageContact(name) {
+      alert('Messaging ' + name);
+    }
+  </script>
+</body>
+</html>

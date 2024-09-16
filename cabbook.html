@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tewesgo Taxi Booking</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .background-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Using an iframe for the Spline design */
+    .background-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(10, 10, 10, 0.7);
+      width: 100%;
+      position: relative; /* Make sure it stays above the iframe */
+      z-index: 2; /* Higher z-index to ensure it's on top of iframe */
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9505;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #e88905;
+      transform: scale(1.1);
+    }
+
+    .login-button {
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e88905;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 40px;
+      position: relative;
+      text-align: center;
+      z-index: 2; /* Make sure it stays above the iframe */
+    }
+
+    .content-container {
+      z-index: 3;
+      max-width: 500px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .content-container:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .main-heading {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .main-heading:hover {
+      transform: scale(1.05);
+    }
+
+    .subheading {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+    }
+
+    .subheading:hover {
+      color: #e88905;
+    }
+
+    .book-button, .cab-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #e88905;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .book-button:hover, .cab-button:hover {
+      background-color: #ff9933;
+      transform: scale(1.1);
+    }
+
+    .book-button, .cab-button {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <!-- Spline 3D Animation -->
+    <iframe class="background-iframe" src="https://my.spline.design/carastonmartinanimation-5a3f58d713c8d93bf9776baede89feb1/" frameborder="0" allowfullscreen></iframe>
+    
+    <!-- Main Content -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="header-content">
+          <a href="#" class="logo">Tewes<span>go</span></a>
+          
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#" class="nav-link">Our Services</a></li>
+            <li><a href="#" class="nav-link">About Us</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link login-button">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <div class="content-container">
+        <h1 class="main-heading">Book Your Taxi Now</h1>
+        <p class="subheading">Enjoy a comfortable and safe ride with our premium taxi booking service!</p>
+        <a href="map.html" class="book-button">Book Your instant Ride</a>
+        <a href="bookyourcab.html" class="cab-button">Book Your Cab</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Make navigation link active on click
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
